@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kodo - Use Cases</title>
+  <link rel="stylesheet" href="shared-styles.css">
+  <style>
+    .use-cases-section {
+      text-align: center;
+    }
+
+    .title {
+      font-size: 3rem;
+      font-weight: 600;
+      letter-spacing: -0.03em;
+      margin-bottom: 1rem;
+      color: #ffffff;
+    }
+
+    .subtitle {
+      font-size: 1.25rem;
+      color: #808080;
+      margin-bottom: 4rem;
+    }
+
+    .personas-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .persona {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5rem;
+      padding: 2rem;
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      transition: all 0.3s ease;
+      opacity: 0;
+      animation: fadeInUp 0.6s ease-out forwards;
+    }
+
+    .persona:nth-child(1) { animation-delay: 0.1s; }
+    .persona:nth-child(2) { animation-delay: 0.2s; }
+    .persona:nth-child(3) { animation-delay: 0.3s; }
+    .persona:nth-child(4) { animation-delay: 0.4s; }
+    .persona:nth-child(5) { animation-delay: 0.5s; }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .persona:hover {
+      border-color: rgba(34, 197, 94, 0.3);
+      background: rgba(255, 255, 255, 0.04);
+      transform: translateY(-8px);
+    }
+
+    .persona-icon {
+      width: 80px;
+      height: 80px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+    }
+
+    .persona:hover .persona-icon {
+      background: rgba(34, 197, 94, 0.1);
+      border-color: rgba(34, 197, 94, 0.3);
+    }
+
+    .persona-icon svg {
+      width: 40px;
+      height: 40px;
+      stroke: #ffffff;
+      fill: none;
+      stroke-width: 1.5;
+    }
+
+    .persona-title {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: #ffffff;
+      margin-bottom: 0.5rem;
+    }
+
+    .persona-description {
+      font-size: 0.875rem;
+      line-height: 1.6;
+      color: #808080;
+      text-align: center;
+    }
+
+    .use-case-example {
+      margin-top: 0.75rem;
+      padding: 0.75rem;
+      background: rgba(0, 0, 0, 0.3);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: 8px;
+      font-size: 0.75rem;
+      color: #909090;
+      font-style: italic;
+      line-height: 1.5;
+    }
+
+    @media (max-width: 768px) {
+      .personas-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="use-cases-section">
+      <h2 class="title">Built for Every Role</h2>
+      <p class="subtitle">From code to design to client updates — Kodo works for everyone</p>
+
+      <div class="personas-grid">
+        <!-- Developer -->
+        <div class="persona">
+          <div class="persona-icon">
+            <svg viewBox="0 0 24 24">
+              <polyline points="16 18 22 12 16 6"/>
+              <polyline points="8 6 2 12 8 18"/>
+            </svg>
+          </div>
+          <div>
+            <div class="persona-title">Developer</div>
+            <div class="persona-description">
+              Auto-generate PRs, code tasks, and technical specs from standups
+            </div>
+            <div class="use-case-example">
+              "Create GitHub PR for authentication refactor mentioned in daily standup"
+            </div>
+          </div>
+        </div>
+
+        <!-- Product Manager -->
+        <div class="persona">
+          <div class="persona-icon">
+            <svg viewBox="0 0 24 24">
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+            </svg>
+          </div>
+          <div>
+            <div class="persona-title">Product Manager</div>
+            <div class="persona-description">
+              Turn feature discussions into organized Jira tickets and roadmap items
+            </div>
+            <div class="use-case-example">
+              "Create epic for new analytics dashboard discussed in planning meeting"
+            </div>
+          </div>
+        </div>
+
+        <!-- Designer -->
+        <div class="persona">
+          <div class="persona-icon">
+            <svg viewBox="0 0 24 24">
+              <path d="M12 19l7 2-7-18-7 18 7-2zm0 0v-8"/>
+            </svg>
+          </div>
+          <div>
+            <div class="persona-title">Designer</div>
+            <div class="persona-description">
+              Extract design tasks and create Figma files from feedback sessions
+            </div>
+            <div class="use-case-example">
+              "Generate Figma mockup tasks from client design review notes"
+            </div>
+          </div>
+        </div>
+
+        <!-- Marketing -->
+        <div class="persona">
+          <div class="persona-icon">
+            <svg viewBox="0 0 24 24">
+              <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/>
+              <path d="M9 22V12h6v10"/>
+            </svg>
+          </div>
+          <div>
+            <div class="persona-title">Marketing</div>
+            <div class="persona-description">
+              Capture campaign ideas and assign content creation tasks
+            </div>
+            <div class="use-case-example">
+              "Create content calendar tasks from quarterly marketing strategy meeting"
+            </div>
+          </div>
+        </div>
+
+        <!-- Client Success -->
+        <div class="persona">
+          <div class="persona-icon">
+            <svg viewBox="0 0 24 24">
+              <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/>
+              <circle cx="9" cy="7" r="4"/>
+              <path d="M23 21v-2a4 4 0 00-3-3.87"/>
+              <path d="M16 3.13a4 4 0 010 7.75"/>
+            </svg>
+          </div>
+          <div>
+            <div class="persona-title">Client Success</div>
+            <div class="persona-description">
+              Document client requests and create follow-up action items
+            </div>
+            <div class="use-case-example">
+              "Generate support tickets and Slack updates from client onboarding call"
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

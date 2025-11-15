@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kodo - Before vs After</title>
+  <link rel="stylesheet" href="shared-styles.css">
+  <style>
+    .before-after-section {
+      text-align: center;
+    }
+
+    .title {
+      font-size: 3rem;
+      font-weight: 600;
+      letter-spacing: -0.03em;
+      margin-bottom: 1rem;
+      color: #ffffff;
+    }
+
+    .subtitle {
+      font-size: 1.25rem;
+      color: #808080;
+      margin-bottom: 4rem;
+    }
+
+    .comparison {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .comparison-column {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .column-header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .status-badge {
+      padding: 0.5rem 1.5rem;
+      border-radius: 20px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .status-badge.before {
+      background: rgba(239, 68, 68, 0.1);
+      border: 1px solid rgba(239, 68, 68, 0.3);
+      color: #fca5a5;
+    }
+
+    .status-badge.after {
+      background: rgba(34, 197, 94, 0.1);
+      border: 1px solid rgba(34, 197, 94, 0.3);
+      color: #22c55e;
+    }
+
+    .column-title {
+      font-size: 2rem;
+      font-weight: 600;
+      color: #ffffff;
+    }
+
+    .scenario-card {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      padding: 2rem;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .before-content {
+      border-left: 3px solid rgba(239, 68, 68, 0.3);
+    }
+
+    .after-content {
+      border-left: 3px solid rgba(34, 197, 94, 0.3);
+    }
+
+    .scenario-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      padding: 1rem;
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: 8px;
+    }
+
+    .item-icon {
+      width: 32px;
+      height: 32px;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 6px;
+    }
+
+    .item-icon.problem {
+      background: rgba(239, 68, 68, 0.1);
+      border: 1px solid rgba(239, 68, 68, 0.2);
+    }
+
+    .item-icon.solution {
+      background: rgba(34, 197, 94, 0.1);
+      border: 1px solid rgba(34, 197, 94, 0.2);
+    }
+
+    .item-icon svg {
+      width: 18px;
+      height: 18px;
+      stroke-width: 2;
+      fill: none;
+    }
+
+    .item-icon.problem svg {
+      stroke: #fca5a5;
+    }
+
+    .item-icon.solution svg {
+      stroke: #22c55e;
+    }
+
+    .item-content {
+      flex-grow: 1;
+      text-align: left;
+    }
+
+    .item-title {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #ffffff;
+      margin-bottom: 0.25rem;
+    }
+
+    .item-description {
+      font-size: 0.875rem;
+      color: #808080;
+      line-height: 1.5;
+    }
+
+    .stats-box {
+      margin-top: 2rem;
+      padding: 1.5rem;
+      background: rgba(0, 0, 0, 0.3);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: 8px;
+    }
+
+    .stat {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.75rem 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .stat:last-child {
+      border-bottom: none;
+    }
+
+    .stat-label {
+      font-size: 0.875rem;
+      color: #909090;
+    }
+
+    .stat-value {
+      font-size: 1.125rem;
+      font-weight: 600;
+    }
+
+    .stat-value.bad {
+      color: #fca5a5;
+    }
+
+    .stat-value.good {
+      color: #22c55e;
+    }
+
+    @media (max-width: 1024px) {
+      .comparison {
+        grid-template-columns: 1fr;
+        gap: 4rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="before-after-section">
+      <h2 class="title">The Transformation</h2>
+      <p class="subtitle">From chaos to clarity</p>
+
+      <div class="comparison">
+        <!-- Before -->
+        <div class="comparison-column">
+          <div class="column-header">
+            <span class="status-badge before">Before</span>
+          </div>
+          <div class="scenario-card before-content">
+            <div class="scenario-item">
+              <div class="item-icon problem">
+                <svg viewBox="0 0 24 24">
+                  <path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/>
+                  <path d="M12 9v4m0 4h.01"/>
+                </svg>
+              </div>
+              <div class="item-content">
+                <div class="item-title">Scattered Notes</div>
+                <div class="item-description">
+                  Action items buried in meeting notes across Notion, Google Docs, and random Slack threads
+                </div>
+              </div>
+            </div>
+
+            <div class="scenario-item">
+              <div class="item-icon problem">
+                <svg viewBox="0 0 24 24">
+                  <circle cx="12" cy="12" r="10"/>
+                  <path d="M12 8v4m0 4h.01"/>
+                </svg>
+              </div>
+              <div class="item-content">
+                <div class="item-title">Manual Ticket Creation</div>
+                <div class="item-description">
+                  Spending 30+ minutes after every meeting creating Jira tickets, GitHub issues, and updating docs
+                </div>
+              </div>
+            </div>
+
+            <div class="scenario-item">
+              <div class="item-icon problem">
+                <svg viewBox="0 0 24 24">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                  <path d="M12 8v4m0 4h.01"/>
+                </svg>
+              </div>
+              <div class="item-content">
+                <div class="item-title">Lost Context</div>
+                <div class="item-description">
+                  Team members miss key decisions, assignments unclear, no single source of truth
+                </div>
+              </div>
+            </div>
+
+            <div class="scenario-item">
+              <div class="item-icon problem">
+                <svg viewBox="0 0 24 24">
+                  <circle cx="12" cy="12" r="10"/>
+                  <path d="M12 6v6l4 2"/>
+                </svg>
+              </div>
+              <div class="item-content">
+                <div class="item-title">Delayed Execution</div>
+                <div class="item-description">
+                  Hours or days pass before tasks make it into team workflows and execution tools
+                </div>
+              </div>
+            </div>
+
+            <div class="stats-box">
+              <div class="stat">
+                <span class="stat-label">Time to first task</span>
+                <span class="stat-value bad">2-3 hours</span>
+              </div>
+              <div class="stat">
+                <span class="stat-label">Tasks created manually</span>
+                <span class="stat-value bad">100%</span>
+              </div>
+              <div class="stat">
+                <span class="stat-label">Context loss rate</span>
+                <span class="stat-value bad">~40%</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- After -->
+        <div class="comparison-column">
+          <div class="column-header">
+            <span class="status-badge after">After</span>
+          </div>
+          <div class="scenario-card after-content">
+            <div class="scenario-item">
+              <div class="item-icon solution">
+                <svg viewBox="0 0 24 24">
+                  <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/>
+                  <path d="M22 4L12 14.01l-3-3"/>
+                </svg>
+              </div>
+              <div class="item-content">
+                <div class="item-title">Automatic Capture</div>
+                <div class="item-description">
+                  Every action item, decision, and assignment automatically extracted and structured in real-time
+                </div>
+              </div>
+            </div>
+
+            <div class="scenario-item">
+              <div class="item-icon solution">
+                <svg viewBox="0 0 24 24">
+                  <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+                </svg>
+              </div>
+              <div class="item-content">
+                <div class="item-title">One-Click Execution</div>
+                <div class="item-description">
+                  Tasks instantly created in Jira, PRs drafted in GitHub, designs queued in Figma — all from one click
+                </div>
+              </div>
+            </div>
+
+            <div class="scenario-item">
+              <div class="item-icon solution">
+                <svg viewBox="0 0 24 24">
+                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                </svg>
+              </div>
+              <div class="item-content">
+                <div class="item-title">Perfect Context</div>
+                <div class="item-description">
+                  Every task includes full context, relevant discussion, assigned owner, and linked dependencies
+                </div>
+              </div>
+            </div>
+
+            <div class="scenario-item">
+              <div class="item-icon solution">
+                <svg viewBox="0 0 24 24">
+                  <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+                </svg>
+              </div>
+              <div class="item-content">
+                <div class="item-title">Instant Momentum</div>
+                <div class="item-description">
+                  Team starts executing immediately — no waiting, no manual setup, no friction
+                </div>
+              </div>
+            </div>
+
+            <div class="stats-box">
+              <div class="stat">
+                <span class="stat-label">Time to first task</span>
+                <span class="stat-value good">~30 seconds</span>
+              </div>
+              <div class="stat">
+                <span class="stat-label">Tasks created manually</span>
+                <span class="stat-value good">0%</span>
+              </div>
+              <div class="stat">
+                <span class="stat-label">Context loss rate</span>
+                <span class="stat-value good">~0%</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

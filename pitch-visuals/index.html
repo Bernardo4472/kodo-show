@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kodo Pitch Visuals - Navigation</title>
+  <link rel="stylesheet" href="shared-styles.css">
+  <style>
+    .nav-section {
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .nav-title {
+      font-size: 3.5rem;
+      font-weight: 600;
+      letter-spacing: -0.04em;
+      margin-bottom: 1rem;
+      background: linear-gradient(180deg, #ffffff 0%, #888888 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .nav-subtitle {
+      font-size: 1.25rem;
+      color: #808080;
+      margin-bottom: 4rem;
+    }
+
+    .visuals-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .visual-card {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      padding: 2rem;
+      text-align: left;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      display: block;
+    }
+
+    .visual-card:hover {
+      border-color: rgba(34, 197, 94, 0.3);
+      background: rgba(255, 255, 255, 0.04);
+      transform: translateY(-4px);
+    }
+
+    .card-number {
+      font-size: 0.875rem;
+      color: #606060;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 0.75rem;
+    }
+
+    .card-title {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #ffffff;
+      margin-bottom: 0.75rem;
+    }
+
+    .card-description {
+      font-size: 0.875rem;
+      color: #909090;
+      line-height: 1.6;
+    }
+
+    .arrow-icon {
+      margin-top: 1rem;
+      color: #22c55e;
+      font-size: 1.5rem;
+      opacity: 0;
+      transform: translateX(-10px);
+      transition: all 0.3s ease;
+    }
+
+    .visual-card:hover .arrow-icon {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .instructions {
+      margin-top: 4rem;
+      padding: 2rem;
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      text-align: left;
+    }
+
+    .instructions h3 {
+      font-size: 1.25rem;
+      color: #ffffff;
+      margin-bottom: 1rem;
+    }
+
+    .instructions ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .instructions li {
+      padding: 0.5rem 0;
+      color: #909090;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+    }
+
+    .instructions li::before {
+      content: "→";
+      color: #22c55e;
+      flex-shrink: 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="nav-section">
+      <h1 class="nav-title">Kodo Pitch Visuals</h1>
+      <p class="nav-subtitle">Premium dark-themed pitch deck for Kodo</p>
+
+      <div class="visuals-grid">
+        <a href="01-hero.html" class="visual-card">
+          <div class="card-number">Slide 01</div>
+          <div class="card-title">Hero Visual</div>
+          <div class="card-description">
+            Main headline with floating UI mockup and task preview
+          </div>
+          <div class="arrow-icon">→</div>
+        </a>
+
+        <a href="02-how-it-works.html" class="visual-card">
+          <div class="card-number">Slide 02</div>
+          <div class="card-title">How It Works</div>
+          <div class="card-description">
+            3-step process diagram from meeting to execution
+          </div>
+          <div class="arrow-icon">→</div>
+        </a>
+
+        <a href="03-task-cards.html" class="visual-card">
+          <div class="card-number">Slide 03</div>
+          <div class="card-title">Task Cards Preview</div>
+          <div class="card-description">
+            Grid of auto-generated task cards across different tools
+          </div>
+          <div class="arrow-icon">→</div>
+        </a>
+
+        <a href="04-pr-machine.html" class="visual-card">
+          <div class="card-number">Slide 04</div>
+          <div class="card-title">PR Machine</div>
+          <div class="card-description">
+            Side-by-side: meeting conversation to GitHub pull request
+          </div>
+          <div class="arrow-icon">→</div>
+        </a>
+
+        <a href="05-architecture.html" class="visual-card">
+          <div class="card-number">Slide 05</div>
+          <div class="card-title">Architecture</div>
+          <div class="card-description">
+            Clean 4-layer stack from input to MCP execution
+          </div>
+          <div class="arrow-icon">→</div>
+        </a>
+
+        <a href="06-use-cases.html" class="visual-card">
+          <div class="card-number">Slide 06</div>
+          <div class="card-title">Use Cases</div>
+          <div class="card-description">
+            5 persona icons with real-world use case examples
+          </div>
+          <div class="arrow-icon">→</div>
+        </a>
+
+        <a href="07-before-after.html" class="visual-card">
+          <div class="card-number">Slide 07</div>
+          <div class="card-title">Before vs After</div>
+          <div class="card-description">
+            Transformation comparison with metrics and benefits
+          </div>
+          <div class="arrow-icon">→</div>
+        </a>
+
+        <a href="08-closing.html" class="visual-card">
+          <div class="card-number">Slide 08</div>
+          <div class="card-title">Closing / CTA</div>
+          <div class="card-description">
+            Final slide with tagline and call to action
+          </div>
+          <div class="arrow-icon">→</div>
+        </a>
+      </div>
+
+      <div class="instructions">
+        <h3>Quick Start</h3>
+        <ul>
+          <li>Click any card above to view that visual in full screen</li>
+          <li>Open visuals in fullscreen mode (F11) for presentations</li>
+          <li>Take screenshots or use browser tools to export as images</li>
+          <li>All visuals are responsive and work on any screen size</li>
+          <li>Consistent design system across all 8 slides</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
