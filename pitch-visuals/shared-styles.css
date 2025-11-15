@@ -16,27 +16,33 @@ body {
   align-items: center;
   justify-content: center;
   position: relative;
-  overflow: hidden;
+  overflow-y: auto;
+  overflow-x: hidden;
   padding: 60px;
 }
 
-/* Aurora Glow Effect - Bottom Edge */
+/* Aurora Glow Effect - Curved Band from Bottom-Left */
 body::before {
   content: '';
   position: fixed;
-  bottom: -50%;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 150%;
-  height: 100%;
-  background: radial-gradient(
-    ellipse at center,
-    rgba(34, 197, 94, 0.15) 0%,
-    rgba(234, 179, 8, 0.1) 30%,
-    transparent 70%
-  );
+  bottom: -20%;
+  left: -10%;
+  width: 120%;
+  height: 80%;
+  background: 
+    radial-gradient(
+      ellipse 80% 40% at 20% 80%,
+      rgba(20, 80, 40, 0.4) 0%,
+      rgba(34, 150, 80, 0.3) 15%,
+      rgba(150, 220, 150, 0.2) 30%,
+      rgba(240, 240, 220, 0.15) 45%,
+      rgba(255, 255, 240, 0.1) 55%,
+      transparent 70%
+    );
+  filter: blur(80px);
   pointer-events: none;
   z-index: 0;
+  transform: rotate(-15deg);
 }
 
 .container {
