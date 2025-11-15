@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kodo - Where Teams Lose Time</title>
+  <link rel="stylesheet" href="shared-styles.css">
+  <style>
+    .teams-lose-time-section {
+      text-align: center;
+    }
+
+    .title {
+      font-size: 2.75rem;
+      font-weight: 600;
+      letter-spacing: -0.03em;
+      margin-bottom: 3.5rem;
+      color: #ffffff;
+    }
+
+    .tiles-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .stat-tile {
+      background: rgba(255, 255, 255, 0.015);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 10px;
+      padding: 2rem;
+      text-align: center;
+      transition: all 0.3s ease;
+      opacity: 0;
+      animation: fadeInUp 0.6s ease-out forwards;
+    }
+
+    .stat-tile:nth-child(1) { animation-delay: 0.1s; }
+    .stat-tile:nth-child(2) { animation-delay: 0.2s; }
+    .stat-tile:nth-child(3) { animation-delay: 0.3s; }
+    .stat-tile:nth-child(4) { animation-delay: 0.4s; }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .stat-tile:hover {
+      border-color: rgba(34, 197, 94, 0.25);
+      background: rgba(255, 255, 255, 0.025);
+      transform: translateY(-2px);
+    }
+
+    .stat-label {
+      font-size: 0.875rem;
+      color: #707070;
+      margin-bottom: 1.25rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-weight: 600;
+    }
+
+    .stat-number {
+      font-size: 3rem;
+      font-weight: 600;
+      color: #22c55e;
+      margin-bottom: 0.75rem;
+      line-height: 1;
+    }
+
+    .stat-hint {
+      font-size: 0.875rem;
+      color: #808080;
+      line-height: 1.4;
+    }
+
+    @media (max-width: 768px) {
+      .tiles-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="teams-lose-time-section">
+      <h2 class="title">Where Teams Lose Time</h2>
+
+      <div class="tiles-grid">
+        <!-- Engineering -->
+        <div class="stat-tile">
+          <div class="stat-label">Engineering</div>
+          <div class="stat-number">5–8 hrs/week</div>
+          <div class="stat-hint">context + tickets</div>
+        </div>
+
+        <!-- Product & Design -->
+        <div class="stat-tile">
+          <div class="stat-label">Product & Design</div>
+          <div class="stat-number">40–50%</div>
+          <div class="stat-hint">clarifying requirements</div>
+        </div>
+
+        <!-- Marketing & Sales -->
+        <div class="stat-tile">
+          <div class="stat-label">Marketing & Sales</div>
+          <div class="stat-number">6–10 hrs/week</div>
+          <div class="stat-hint">rewriting briefs</div>
+        </div>
+
+        <!-- Finance & Ops -->
+        <div class="stat-tile">
+          <div class="stat-label">Finance & Ops</div>
+          <div class="stat-number">20–30%</div>
+          <div class="stat-hint">syncing decisions</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
